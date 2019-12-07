@@ -1,0 +1,41 @@
+---
+title: "Report of suicide"
+output: html_document
+---
+
+```{r setup, eval=TRUE, message=FALSE, echo=FALSE, include=FALSE}
+library("dplyr")
+library("leaflet")
+library("ggplot2")
+library("knitr")
+```
+
+```{r message=FALSE, echo=FALSE, include=FALSE}
+source("analysis.R")
+```
+
+## Introduction
+The time series of the data set is 1985-2016. This dataset was pulled in 2018 by Kaggle user Rusty from four other datasets, and was built to find correlations of increased suicide rates and socio-economic conditions across the world. The other four datasets are from United Nations Development Program, World Bank, [Szamil] and World Health Organization. 
+
+## Plot
+```{r, echo=FALSE}
+suicide_wrt_gdp_plot
+```
+
+```{r, echo=FALSE}
+suicides_by_year_plot
+```
+
+
+```{r, echo=FALSE}
+gdp_by_year_plot
+```
+
+## Conclusion
+From the time series, we can tell that the suicides rate went up from 1985 to 2003, and then became steady for four years, and suddenly went up in 2009, and then went down gradually. We can also tell that the gdp per capita went steadily from 1985 to 2008, and then fluctuates and decreased. I have a guess that why suicides rate went up in 2009 was due to the aftermath of economic recession. Another conclusion we can draw is that from the first plot, regions of low gdp per capita have higher suicides rate. The stakeholders are people who killed themselves and people around them including their parents and friends. This analysis can be used to raise the awareness of how serious the psychological illness is. People choose suicide may because they lack care, face financial problems, or face stress from schools and work. And hopefully the analysis of suicides can make more people pay attention to it and bring more care to people around us.
+
+## Reflection
+During the process of analysis of suicides data, I think we sometimes can't draw direct or affirmative conclusions just from a few time series plots. There are some reasons. First, I observed the data set and found that the number of suicides may just be a small sample of overall suicides cases. In statistics, it's called sample of population and whether sample is representative is critically important to the accuracy of analysis. Hence I doubt whether this sample can be diverse enough to cover different regions in a country, different age ranges, different careers. The sample chosen sometimes show human beings' biases and thus cause deviation. The number of sample is also critical, since super large data sets may be hard to collect and analyze, while too small sample can't tell us the trend. To conclude, in the process of analyzing data, we first should pay attention to the data source and reflect whether it shows any biases, and then analyze it from different angles.
+
+## Apendix
+Code file: analysis.R
